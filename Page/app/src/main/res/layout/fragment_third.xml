@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.page.ThirdFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.99"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="224dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorAccent"
+                app:srcCompat="@mipmap/sha" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text=" 每想你一次，天上飘落一粒沙，从此形成了撒哈拉。"
+                android:textColor="@color/colorPrimaryDark"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.99"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="梦想，可以天花乱坠，理想，是我们一步一个脚印踩出来的坎坷道路."
+                android:textColor="@color/colorPrimaryDark" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                app:srcCompat="@mipmap/dear" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/sent1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="1.路是由足和各组成的,足表示路是用脚走出来的,各表示各人有各人不同的路。"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/sent2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="2. 世上难有永恒的爱情，世上绝对存在不灭的亲情。一旦爱情化解为亲情，那份根基，才不是建筑在沙土上了。"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/sent3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="3. 一直以为是我，一直预感的是自己，对着一分一秒都是恐惧，都是不舍，都是牵挂。而那个噩梦，一日密似一日的纠缠着上来。"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/sent4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="4.用一秒钟转身离开，用一辈子去忘记。"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/sent5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="5.锁上我的记忆，锁上我的忧伤，不再想你，怎么可能再想你，快乐是禁地，生死之后，找不到进去的钥匙 。"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/sent6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="6.爱情是一种奥妙，在爱情中出现籍口时，籍口就是籍口，显然已经没有热情的籍口而已，来无影，去无踪。如果爱情消逝，一方以任何理由强求再得，这，正如强收覆水一样的不明事理。"
+            android:textColor="@color/colorPrimaryDark" />
+
+    </LinearLayout>
+
+</FrameLayout>
