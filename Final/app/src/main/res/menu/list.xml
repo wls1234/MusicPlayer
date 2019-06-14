@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item
-    android:id="@+id/first"
-    android:title="1111"
-    />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/second"
-        android:title="222"
-        />
+        android:id="@+id/list_item"
+        android:icon="@mipmap/music"
+        android:title="setting"
+        android:visible="true"
+        app:showAsAction="always" />
 </menu>

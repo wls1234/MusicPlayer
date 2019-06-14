@@ -17,17 +17,17 @@
         android:layout_height="100dp"
         android:layout_weight="1">
 
-        //设置返回按钮图片
+        <!--//设置返回按钮图片-->
 
-        <ImageButton
-            android:id="@+id/back"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
-            android:background="@android:color/darker_gray"
-            android:src="@mipmap/music" />
+        <!--<ImageButton-->
+            <!--android:id="@+id/back"-->
+            <!--android:layout_width="80dp"-->
+            <!--android:layout_height="80dp"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:background="@android:color/darker_gray"-->
+            <!--android:src="@mipmap/music" />-->
         //设置歌曲名
 
         <TextView
@@ -42,18 +42,22 @@
             android:text="whalien52"
             android:textColor="#f9f7f7"
             android:textSize="36sp" />
-        <!--//设置歌手名-->
+        //设置歌手名
 
-        <!--<TextView-->
-            <!--android:id="@+id/artist"-->
-            <!--android:layout_width="61dp"-->
-            <!--android:layout_height="30dp"-->
-            <!--android:layout_below="@id/song"-->
-            <!--android:layout_alignStart="@id/song"-->
-            <!--android:layout_marginTop="5dp"-->
-            <!--android:text="bts"-->
-            <!--android:textColor="#aeabab"-->
-            <!--android:textSize="15sp" />-->
+        <TextView
+            android:id="@+id/artist"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/song"
+            android:layout_alignStart="@id/song"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="-65dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="65dp"
+            android:text="bts"
+            android:textColor="#aeabab"
+            android:textSize="15sp" />
         <!--//设置专辑名-->
 
         <!--<TextView-->
