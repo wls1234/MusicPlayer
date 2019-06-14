@@ -30,10 +30,6 @@ public class Final extends AppCompatActivity {
     private ImageButton btn_down;
     private MediaPlayer mediaPlayer;
     private boolean ispause=false;
-    TextView song;
-    TextView artist;
-    private String songName = "oo";
-    private String artistName ="11" ;
     private String TAG="Final";
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,33 +38,23 @@ public class Final extends AppCompatActivity {
         btn_up = findViewById(R.id.up);
         btn_pause = findViewById(R.id.pause);
         btn_down = findViewById(R.id.down);
-        song=findViewById(R.id.song);
-        artist=findViewById(R.id.artist);
-
-        songName = getIntent().getStringExtra("songTitle");
-        Log.i(TAG, "onCreate: songName="+songName);
-//        artistName = getIntent().getSringExtra("artistTitle");
-//        songName=getIntent().getStringExtra("song_name","0");
-//        artistName=sharedPreferences.getString("artist_name","1");
-//        Thread t = new Thread((Runnable) this);
-//        t.start();
-//        mediaPlayer=MediaPlayer.create(this,R.raw.whalien52);
-////        btn_up.setOnClickListener((View.OnClickListener) this);
-////        btn_down.setOnClickListener((View.OnClickListener) this);
-//        btn_pause.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (mediaPlayer.isPlaying() && !ispause) {
-//                    mediaPlayer.pause();
-//                    ispause = true;
-//                    ((ImageButton) v).setImageDrawable(getResources().getDrawable(R.drawable.pause, null));
-//                } else {
-//                    mediaPlayer.start();//开始播放音频
-//                    ispause = false;
-//                    ((ImageButton) v).setImageDrawable(getResources().getDrawable(R.drawable.play, null));
-//                }
-//            }
-//        });
+        mediaPlayer=MediaPlayer.create(this,R.raw.whalien52);
+//        btn_up.setOnClickListener((View.OnClickListener) this);
+//        btn_down.setOnClickListener((View.OnClickListener) this);
+        btn_pause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mediaPlayer.isPlaying() && !ispause) {
+                    mediaPlayer.pause();
+                    ispause = true;
+                    ((ImageButton) v).setImageDrawable(getResources().getDrawable(R.drawable.pause, null));
+                } else {
+                    mediaPlayer.start();//开始播放音频
+                    ispause = false;
+                    ((ImageButton) v).setImageDrawable(getResources().getDrawable(R.drawable.play, null));
+                }
+            }
+        });
 //        Handler handler = new Handler() {
 //            @Override
 //            public void handleMessage(Message msg) {
@@ -95,8 +81,8 @@ public class Final extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId()==R.id.list_item){
-            Intent list = new Intent(this, MusicList.class);
-            startActivity(list);
+            Intent intent = new Intent(this, MusicList.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
