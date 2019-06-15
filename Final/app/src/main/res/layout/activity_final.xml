@@ -31,7 +31,7 @@
         //设置歌曲名
 
         <TextView
-            android:id="@+id/song"
+            android:id="@+id/song1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -45,11 +45,11 @@
         //设置歌手名
 
         <TextView
-            android:id="@+id/artist"
+            android:id="@+id/artist1"
             android:layout_width="40dp"
             android:layout_height="30dp"
-            android:layout_below="@id/song"
-            android:layout_alignStart="@id/song"
+            android:layout_below="@id/song1"
+            android:layout_alignStart="@id/song1"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
             android:layout_marginStart="-65dp"
@@ -178,7 +178,7 @@
             //设置“进度条”
 
             <SeekBar
-                android:id="@+id/jidutiao"
+                android:id="@+id/seekbar"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />

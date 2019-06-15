@@ -1,0 +1,191 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/listen_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@android:color/darker_gray" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1">
+
+        <!--//设置返回按钮图片-->
+
+        <!--<ImageButton-->
+        <!--android:id="@+id/back"-->
+        <!--android:layout_width="80dp"-->
+        <!--android:layout_height="80dp"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:background="@android:color/darker_gray"-->
+        <!--android:src="@mipmap/music" />-->
+        //设置歌曲名
+
+        <TextView
+            android:id="@+id/song1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:shadowColor="#FCFCFC"
+            android:text="whalien52"
+            android:src="@android:color/darker_gray"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
+        //设置歌手名
+
+        <TextView
+            android:id="@+id/artist1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/song1"
+            android:layout_alignStart="@id/song1"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="whalien52"
+            android:textColor="#6486B1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:visibility="visible" />
+        <!--//设置专辑名-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/album"-->
+        <!--android:layout_width="61dp"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:layout_below="@id/song"-->
+        <!--android:layout_alignStart="@id/artist"-->
+        <!--android:layout_marginStart="80dp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:text="bts"-->
+        <!--android:textColor="#aeabab"-->
+        <!--android:textSize="15sp" />-->
+
+    </RelativeLayout>
+
+    //设置唱片圆盘
+
+    <ImageView
+        android:id="@+id/pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="230dp"
+        android:layout_weight="1"
+        android:src="@drawable/back" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-7dp"
+        android:layout_marginTop="-6dp"
+        android:layout_marginBottom="15dp">
+
+        <RelativeLayout
+            android:id="@+id/listen_play"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp">
+
+            //设置“暂停”
+
+            <ImageButton
+                android:id="@+id/pause"
+                android:layout_width="100dp"
+                android:layout_height="250dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                android:onClick="onClick"
+                android:src="@drawable/pause" />
+            //设置“上一首”
+
+            <ImageButton
+                android:id="@+id/up"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@id/pause"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                android:src="@drawable/uppp" />
+
+            //设置下一首
+
+            <ImageButton
+                android:id="@+id/down"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/pause"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                android:src="@drawable/next" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/listen_play"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+            //设置“当前歌曲时间”
+
+            <TextView
+                android:id="@+id/beginTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="18sp" />
+            //设置“进度条”
+
+            <SeekBar
+                android:id="@+id/jidutiao"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            //设置“歌曲总时长”
+
+            <TextView
+                android:id="@+id/endTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2:40"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

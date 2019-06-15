@@ -6,17 +6,23 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="com.example.afinal.ListActivity">
+
     <TextView
+        android:id="@+id/songName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="hello"
+        android:textAlignment="viewStart"
+        android:textAllCaps="true"
         android:textSize="20dp"
-        android:id="@+id/songName"/>
+        android:textStyle="bold" />
+
     <TextView
+        android:id="@+id/artistName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/artistName"
         android:gravity="end"
         android:text="nono"
-        android:textSize="15dp"/>
+        android:textAlignment="textEnd"
+        android:textSize="20dp" />
 </LinearLayout>
