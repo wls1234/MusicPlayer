@@ -15,7 +15,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_weight="1">
+       >
 
         <!--//设置返回按钮图片-->
 
@@ -28,8 +28,31 @@
         <!--android:layout_marginLeft="5dp"-->
         <!--android:background="@android:color/darker_gray"-->
         <!--android:src="@mipmap/music" />-->
-        //设置歌曲名
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/uppp"/>
 
+        <SeekBar
+            android:id="@+id/volumnBar"
+            android:layout_width="350dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="0dp"
+            android:layout_centerHorizontal="true"
+            android:max="100"
+            android:progress="50" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="0dp"
+                android:src="@drawable/next" />
+        //设置歌曲名
+        </LinearLayout>
         <TextView
             android:id="@+id/song1"
             android:layout_width="match_parent"
@@ -110,10 +133,8 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="0dp">
 
-            //设置“暂停”
-
             <ImageButton
-                android:id="@+id/pause"
+                android:id="@+id/playBtn"
                 android:layout_width="100dp"
                 android:layout_height="250dp"
                 android:layout_centerInParent="true"
@@ -131,7 +152,7 @@
                 android:layout_centerInParent="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:layout_toLeftOf="@id/pause"
+                android:layout_toLeftOf="@id/playBtn"
                 android:layout_weight="1"
                 android:background="@android:color/darker_gray"
                 android:src="@drawable/uppp" />
@@ -145,7 +166,7 @@
                 android:layout_centerInParent="true"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="10dp"
-                android:layout_toRightOf="@id/pause"
+                android:layout_toRightOf="@id/playBtn"
                 android:layout_weight="1"
                 android:background="@android:color/darker_gray"
                 android:src="@drawable/next" />
@@ -171,7 +192,7 @@
             //设置“进度条”
 
             <SeekBar
-                android:id="@+id/jidutiao"
+                android:id="@+id/seekbar"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
