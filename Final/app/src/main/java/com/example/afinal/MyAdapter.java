@@ -14,14 +14,14 @@ import java.util.Map;
 
 public class MyAdapter extends ArrayAdapter {
 
-    public MyAdapter(Context context, int resource, List<HashMap<String, String>> list){
-        super(context, resource,list);
-
+    public MyAdapter( Context context, int resource) {
+        super(context, resource);
     }
+
     public View getView(int position, View convertView, ViewGroup parent){
         View itemview=convertView;
         if (itemview==null){
-            itemview= LayoutInflater.from(getContext()).inflate(R.layout.activity_list,parent,false);
+            itemview= LayoutInflater.from(getContext()).inflate(R.layout.item,parent,false);
         }
         Map<String,String> map= (Map<String, String>) getItem(position);
         TextView songName=itemview.findViewById(R.id.songName);

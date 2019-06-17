@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="10dip"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/text_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:text="千里之外"
+        android:textStyle="bold"
+       />
+
+    <TextView
+        android:id="@+id/text_extra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#333"
+        android:textSize="18sp"
+        android:text="周杰伦-千里之外"
+        android:textStyle="bold"
+        />
+
+</LinearLayout>

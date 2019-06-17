@@ -2,17 +2,20 @@ package com.example.afinal;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -20,23 +23,38 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-public class ListActivity extends android.app.ListActivity implements  Runnable, AdapterView.OnItemClickListener {
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class FirstFragment extends ListFragment implements  Runnable, AdapterView.OnItemClickListener{
+
     Handler handler;
     private List<HashMap<String, String>> listItems;//存放文字图片信息
     private SimpleAdapter listItemApdater;//适配器
     String TAG = "ListActivity";
     MediaPlayer mediaPlayer;
+    Button btn11;
+
+    public FirstFragment() {
+        // Required empty public constructor
+    }
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_list);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_first, container, false);
+    }
+    public void onActivityCreated(Bundle savedInstanceState) {
+        // TODO Auto-generated method stub
+        super.onActivityCreated(savedInstanceState);
+
         initListView();
         this.setListAdapter(listItemApdater);
         Thread t = new Thread(this);
@@ -46,7 +64,7 @@ public class ListActivity extends android.app.ListActivity implements  Runnable,
             public void handleMessage(Message msg) {
                 if (msg.what == 7) {
                     List<HashMap<String,String>> list2 = (List<HashMap<String,String>>) msg.obj;
-                    listItemApdater = new SimpleAdapter(ListActivity.this,list2//listitems数据源
+                    listItemApdater = new SimpleAdapter(getActivity(),list2//listitems数据源
                             , R.layout.activity_list//listitems的xml布局实现
                             , new String[]{"songName", "artistName"},
                             new int[]{R.id.songName, R.id.artistName}
@@ -66,10 +84,10 @@ public class ListActivity extends android.app.ListActivity implements  Runnable,
             list1.add("item" + i);
         }
         //第一步，构造adapter 对象
-        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list1);
+        ListAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list1);
         setListAdapter(adapter);
         //生成适配器的Item和动态数组对应元素
-        listItemApdater = new SimpleAdapter(this, listItems//listitems数据源
+        listItemApdater = new SimpleAdapter(getActivity(), listItems//listitems数据源
                 , R.layout.activity_list//listitems的xml布局实现
                 , new String[]{"songName", "artistName"},
                 new int[]{R.id.songName, R.id.artistName}
@@ -77,7 +95,7 @@ public class ListActivity extends android.app.ListActivity implements  Runnable,
         setListAdapter(listItemApdater);
     }
 
-       public void run() {
+    public void run() {
         Log.i(TAG, "run: ........");
         List<HashMap<String,String>> retlist = new ArrayList<HashMap<String, String>>();
         try {
@@ -109,10 +127,11 @@ public class ListActivity extends android.app.ListActivity implements  Runnable,
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-       HashMap<String,String> map= (HashMap<String, String>) getListView().getItemAtPosition(position);
+
+        HashMap<String,String> map= (HashMap<String, String>) getListView().getItemAtPosition(position);
         Log.i(TAG, "onItemClick: position"+position);
-       String song=map.get("songName");
-       String art=map.get("artistName");
+        String song=map.get("songName");
+        String art=map.get("artistName");
         Log.i(TAG, "onItemClick: song"+song);
         Log.i(TAG, "onItemClick: art"+art);
 //        TextView song_n=findViewById(R.id.song);
@@ -120,7 +139,7 @@ public class ListActivity extends android.app.ListActivity implements  Runnable,
 //        song_n.setText(song);
 //        art_n.setText(art);
 //打开新的页面，传入参数
-        Intent intent =new Intent(this,SecondFragment.class);
+        Intent intent =new Intent(getActivity(),SecondFragment.class);
         intent.putExtra("sn",song);
         intent.putExtra("an",art);
         intent.putExtra("position",position);
@@ -128,4 +147,5 @@ public class ListActivity extends android.app.ListActivity implements  Runnable,
 
 
     }
+
 }

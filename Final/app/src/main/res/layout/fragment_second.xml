@@ -15,43 +15,31 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-       >
-
-        <!--//设置返回按钮图片-->
-
-        <!--<ImageButton-->
-        <!--android:id="@+id/back"-->
-        <!--android:layout_width="80dp"-->
-        <!--android:layout_height="80dp"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:layout_marginLeft="5dp"-->
-        <!--android:background="@android:color/darker_gray"-->
-        <!--android:src="@mipmap/music" />-->
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/uppp"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/uppp"/>
 
-        <SeekBar
-            android:id="@+id/volumnBar"
-            android:layout_width="350dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="0dp"
-            android:layout_centerHorizontal="true"
-            android:max="100"
-            android:progress="50" />
+            <SeekBar
+                android:id="@+id/volumnBar"
+                android:layout_width="300dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="0dp"
+                android:layout_centerHorizontal="true"
+                android:max="100"
+                android:progress="50" />
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginRight="0dp"
                 android:src="@drawable/next" />
-        //设置歌曲名
+            <!--设置歌曲名-->
         </LinearLayout>
         <TextView
             android:id="@+id/song1"
@@ -69,8 +57,8 @@
             android:textSize="30sp"
             android:textStyle="bold"
             tools:ignore="RtlCompat" />
-        //设置歌手名
 
+        <!--设置歌手名-->
         <TextView
             android:id="@+id/artist1"
             android:layout_width="match_parent"
@@ -89,23 +77,8 @@
             android:textSize="18sp"
             android:textStyle="bold"
             tools:visibility="visible" />
-        <!--//设置专辑名-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/album"-->
-        <!--android:layout_width="61dp"-->
-        <!--android:layout_height="30dp"-->
-        <!--android:layout_below="@id/song"-->
-        <!--android:layout_alignStart="@id/artist"-->
-        <!--android:layout_marginStart="80dp"-->
-        <!--android:layout_marginTop="5dp"-->
-        <!--android:text="bts"-->
-        <!--android:textColor="#aeabab"-->
-        <!--android:textSize="15sp" />-->
 
     </RelativeLayout>
-
-    //设置唱片圆盘
 
     <ImageView
         android:id="@+id/pic"
@@ -184,7 +157,7 @@
             //设置“当前歌曲时间”
 
             <TextView
-                android:id="@+id/beginTime"
+                android:id="@+id/begin_Time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00:00"
@@ -199,10 +172,10 @@
             //设置“歌曲总时长”
 
             <TextView
-                android:id="@+id/endTime"
+                android:id="@+id/end_Time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2:40"
+                android:text="3:50"
                 android:textSize="18sp" />
 
         </LinearLayout>
