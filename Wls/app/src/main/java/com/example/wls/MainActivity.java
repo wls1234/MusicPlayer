@@ -1,23 +1,20 @@
 package com.example.wls;
 
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import com.example.wls.adapter.MusicPagerAdapter;
-import com.example.wls.fragment.MyMusicFragment;
-import com.example.wls.fragment.RecFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-//实现OnClickListener的接口
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends FragmentActivity implements View.OnClickListener {
     //定义activity_main.xml的控件对象
-    private TextView logicTv;
-    private TextView onlineTv;
+    private TextView frag1;
+    private TextView frag2;
     private ViewPager viewPager;
     //将Fragment放入List集合中，存放fragment对象
     private List<Fragment> fragmentList = new ArrayList<>();
@@ -25,12 +22,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        //绑定id
-        bangdingID();
+        setContentView(R.layout.main_activity);
+        frag1 = findViewById(R.id.frag1);
+        frag2 = findViewById(R.id.frag2);
+        viewPager = findViewById(R.id.main_vp);
         //设置监听
-        jianting();
+        frag1.setOnClickListener(this);
+        frag2.setOnClickListener(this);
         //创建fragment对象
         MyMusicFragment myMusicFragment= new MyMusicFragment();
         RecFragment recFragment = new RecFragment();
@@ -49,14 +47,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onPageSelected(int position) {
+                Log.i("11", "onPageSelected: "+position);
                 switch (position) {
                     case 0:
-                        logicTv.setTextColor(getResources().getColor(R.color.white));
-                        onlineTv.setTextColor(getResources().getColor(R.color.white_60P));
+                        frag1.setTextColor(getResources().getColor(R.color.white));
+                        frag2.setTextColor(getResources().getColor(R.color.white_60P));
                         break;
                     case 1:
-                        onlineTv.setTextColor(getResources().getColor(R.color.white));
-                        logicTv.setTextColor(getResources().getColor(R.color.white_60P));
+                        frag1.setTextColor(getResources().getColor(R.color.white_60P));
+                        frag2.setTextColor(getResources().getColor(R.color.white));
                         break;
                 }
 
@@ -70,26 +69,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
-
-    private void jianting() {
-        logicTv.setOnClickListener(this);
-        onlineTv.setOnClickListener(this);
-    }
-
-    private void bangdingID() {
-        logicTv = findViewById(R.id.main_logic_tv);
-        onlineTv = findViewById(R.id.main_online_tv);
-        viewPager = findViewById(R.id.main_vp);
-    }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.main_logic_tv:
+            case R.id.frag1:
                 //实现点击TextView切换fragment
                 viewPager.setCurrentItem(0);
                 break;
-            case R.id.main_online_tv:
+            case R.id.frag2:
                 viewPager.setCurrentItem(1);
                 break;
             default:
@@ -98,28 +85,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-//    @Override
-//    public  boolean onKeyDown(int keyCode, KeyEvent event) {
-//        if (keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME) {
-//            final View view = LayoutInflater.from(this).inflate(R.layout.dialog1_layout, null);
-//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//            builder.setTitle("退出提示");
-//            builder.setView(view);
-//            builder.setPositiveButton("是", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//                    finish();
-//                }
-//            });
-//            builder.setNegativeButton("否", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialogInterface, int i) {
-//                    finish();
-//                }
-//            });
-//            return super.onKeyDown(keyCode, event);
-//        }
-//    }
 }
 
 

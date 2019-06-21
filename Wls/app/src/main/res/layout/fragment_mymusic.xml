@@ -2,13 +2,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple"
     tools:context="com.example.wls.MainActivity">
 
-    <!-- TODO: Update blank fragment layout -->
+
  <ListView
      android:id="@+id/mymusic"
      android:layout_width="match_parent"
      android:divider="@null"
      android:layout_height="match_parent"></ListView>
+ <TextView
+     android:id="@+id/diolog"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content" />
+ <com.example.wls.Pinyin.SideBar
+     android:id="@+id/sideBar"
+     android:layout_width="25dp"
+     android:layout_height="wrap_content"
+     android:layout_gravity="right|center_vertical" />
 
 </FrameLayout>

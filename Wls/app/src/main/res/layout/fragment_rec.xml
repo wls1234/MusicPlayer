@@ -3,15 +3,108 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
     tools:context="com.example.wls.ListActivity">
 
-    <ListView
-        android:id="@id/android:list"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:drawSelectorOnTop="false"/>
+        >
+
+        <ImageView
+            android:background="@android:color/darker_gray"
+            android:id="@+id/recmusic1"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_weight="1"
+            android:src="@mipmap/hotmusic" />
+
+        <ListView
+            android:id="@id/android:list"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_weight="0.5"
+            android:background="@android:color/darker_gray"
+            android:drawSelectorOnTop="false" />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:background="@android:color/darker_gray"
+                android:id="@+id/recmusic2"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_weight="1"
+                android:src="@mipmap/newmusic" />
+
+            <TextView
+                android:background="@android:color/darker_gray"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:text="这里是新歌推荐"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:background="@android:color/darker_gray"
+            android:id="@+id/recmusic3"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_weight="1"
+            android:src="@mipmap/pop" />
+
+        <TextView
+            android:background="@android:color/darker_gray"
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:text="这里是流行热歌推荐"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:background="@android:color/darker_gray"
+            android:id="@+id/recmusic4"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_weight="1"
+            android:src="@mipmap/m" />
+
+        <TextView
+            android:background="@android:color/darker_gray"
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:text="这里是榜中榜推荐"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
 
 </LinearLayout>

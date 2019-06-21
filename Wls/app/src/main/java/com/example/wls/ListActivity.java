@@ -79,8 +79,6 @@ public class ListActivity extends android.app.ListActivity implements Runnable, 
             Document doc = null;
             doc = Jsoup.connect("https://www.phb123.com/yule/music/32090.html").get();
             Elements hs = doc.getElementsByTag("h2");
-            String[] songName=new String[hs.size()];
-            String[] artistName=new String[hs.size()];
             for (int i = 0; i < hs.size(); i ++) {
                 Element h1 = hs.get(i);
                 Log.d(TAG, "run: " + h1.text());
