@@ -1,28 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="50dp">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
-    <com.example.wls.Pinyin.EditTextWithDel
-        android:id="@+id/et_songname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="2dp"
-        android:background="#ffffff"
-        android:hint="请输入歌曲名字"
-        android:maxLength="11"
-        android:singleLine="true" />
-</LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
     <View
         android:id="@+id/musicitem_playing_v"
         android:layout_width="3dp"
@@ -70,5 +51,4 @@
         android:layout_toRightOf="@+id/musicitem_album_imgv"
         android:background="#cccccc"
         android:layout_alignParentBottom="true"/>
-    </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
