@@ -1,10 +1,14 @@
 package com.example.wls;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
@@ -42,7 +46,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
             }
 
             @Override
@@ -84,7 +87,29 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }
 
     }
+//    退出提示
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME) {
+            final View view = LayoutInflater.from(this).inflate(R.layout.dialog, null);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("退出提示");
+            builder.setView(view);
+            builder.setPositiveButton("是", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
+            });
+            builder.setNegativeButton("否", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
 
+            });
+            builder.show();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }
-
-

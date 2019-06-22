@@ -102,19 +102,19 @@ public class ListenActivity extends AppCompatActivity implements View.OnClickLis
     }
     //绑定id，设置监听
     private void bingID() {
-        titleTv = findViewById(R.id.music_title_tv);
-        artistTv = findViewById(R.id.music_artist_tv);
-        bgImgv = findViewById(R.id.music_bg_imgv);
-        currrentTv = findViewById(R.id.music_current_tv);
-        totalTv = findViewById(R.id.music_total_tv);
-        prevImgv = findViewById(R.id.music_prev_imgv);
-        nextImgv = findViewById(R.id.music_next_imgv);
-        discImagv = findViewById(R.id.music_disc_imagv);
-        needleImagv = findViewById(R.id.music_needle_imag);
-        pauseImgv = findViewById(R.id.music_pause_imgv);
-        backImg = findViewById(R.id.listen_back);
-        seekBar = findViewById(R.id.music_seekbar);
-        styleImg = findViewById(R.id.music_play_btn_loop_img);
+        titleTv = (TextView) findViewById(R.id.music_title_tv);
+        artistTv = (TextView) findViewById(R.id.music_artist_tv);
+        bgImgv = (ImageView) findViewById(R.id.music_bg_imgv);
+        currrentTv = (TextView) findViewById(R.id.music_current_tv);
+        totalTv = (TextView) findViewById(R.id.music_total_tv);
+        prevImgv = (ImageView) findViewById(R.id.music_prev_imgv);
+        nextImgv = (ImageView) findViewById(R.id.music_next_imgv);
+        discImagv = (ImageView) findViewById(R.id.music_disc_imagv);
+        needleImagv = (ImageView) findViewById(R.id.music_needle_imag);
+        pauseImgv = (ImageView) findViewById(R.id.music_pause_imgv);
+        backImg = (ImageView) findViewById(R.id.listen_back);
+        seekBar = (SeekBar) findViewById(R.id.music_seekbar);
+        styleImg = (ImageView) findViewById(R.id.music_play_btn_loop_img);
         pauseImgv.setOnClickListener(this);
         prevImgv.setOnClickListener(this);
         nextImgv.setOnClickListener(this);

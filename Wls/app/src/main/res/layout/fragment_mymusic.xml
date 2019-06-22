@@ -1,16 +1,32 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple"
+    android:id="@+id/layout_mymusic"
     tools:context="com.example.wls.MainActivity">
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"></ListView>
+  <TextView
+      android:id="@+id/tv_hint"
+      android:layout_width="90dp"
+      android:layout_height="90dp"
+      android:layout_centerInParent="true"
+      android:background="@drawable/ic_launcher_background"
+      android:gravity="center"
+      android:textColor="@android:color/white"
+      android:textSize="45sp"
+      android:visibility="gone" />
+  <com.example.wls.alpha.LetterIndexView
+      android:id="@+id/liv_letters"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true" />
+
+  </RelativeLayout>
 
 
- <ListView
-     android:id="@+id/mymusic"
-     android:layout_width="match_parent"
-     android:divider="@null"
-     android:layout_height="match_parent"></ListView>
-
-
-</FrameLayout>
