@@ -18,18 +18,16 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.example.wls.inner.BlurUtil;
 import com.example.wls.inner.Common;
 import com.example.wls.inner.MergeImage;
-import com.example.wls.inner.Music;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ListenActivity extends AppCompatActivity implements View.OnClickListener {
-    //定义activity_music.xml的控件对象
-    //设置音乐播放模式
     private int i = 0;
     private int playMode = 0;
     private int buttonWitch = 0;
@@ -54,6 +52,7 @@ public class ListenActivity extends AppCompatActivity implements View.OnClickLis
     private RotateAnimation rotateAnimation = null;
     private RotateAnimation rotateAnimation2 = null;
     private String TAG = "ListenActivity";
+
     //Handler实现向主线程进行传值
     private Handler handler = new Handler() {
         @Override
@@ -102,19 +101,19 @@ public class ListenActivity extends AppCompatActivity implements View.OnClickLis
     }
     //绑定id，设置监听
     private void bingID() {
-        titleTv = (TextView) findViewById(R.id.music_title_tv);
-        artistTv = (TextView) findViewById(R.id.music_artist_tv);
-        bgImgv = (ImageView) findViewById(R.id.music_bg_imgv);
-        currrentTv = (TextView) findViewById(R.id.music_current_tv);
-        totalTv = (TextView) findViewById(R.id.music_total_tv);
-        prevImgv = (ImageView) findViewById(R.id.music_prev_imgv);
-        nextImgv = (ImageView) findViewById(R.id.music_next_imgv);
-        discImagv = (ImageView) findViewById(R.id.music_disc_imagv);
-        needleImagv = (ImageView) findViewById(R.id.music_needle_imag);
-        pauseImgv = (ImageView) findViewById(R.id.music_pause_imgv);
-        backImg = (ImageView) findViewById(R.id.listen_back);
-        seekBar = (SeekBar) findViewById(R.id.music_seekbar);
-        styleImg = (ImageView) findViewById(R.id.music_play_btn_loop_img);
+        titleTv = findViewById(R.id.music_title_tv);
+        artistTv = findViewById(R.id.music_artist_tv);
+        bgImgv = findViewById(R.id.music_bg_imgv);
+        currrentTv =  findViewById(R.id.music_current_tv);
+        totalTv = findViewById(R.id.music_total_tv);
+        prevImgv = findViewById(R.id.music_prev_imgv);
+        nextImgv =  findViewById(R.id.music_next_imgv);
+        discImagv =  findViewById(R.id.music_disc_imagv);
+        needleImagv = findViewById(R.id.music_needle_imag);
+        pauseImgv =  findViewById(R.id.music_pause_imgv);
+        backImg =  findViewById(R.id.listen_back);
+        seekBar =  findViewById(R.id.music_seekbar);
+        styleImg =  findViewById(R.id.music_play_btn_loop_img);
         pauseImgv.setOnClickListener(this);
         prevImgv.setOnClickListener(this);
         nextImgv.setOnClickListener(this);
@@ -170,7 +169,6 @@ public class ListenActivity extends AppCompatActivity implements View.OnClickLis
         totalTv.setText(formatTime(Common.musicList.get(position).length));
         // 设置seekbar的最大值
         seekBar.setMax(mediaPlayer.getDuration());
-
         MusicThread musicThread = new MusicThread();                                         //启动线程
         new Thread(musicThread).start();
 
@@ -371,9 +369,6 @@ public class ListenActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onPause() {
         super.onPause();
-        for (Music music : Common.musicList) {
-            music.isPlaying = false;
-        }
         Common.musicList.get(position).isPlaying = true;
     }
 
@@ -399,16 +394,14 @@ public class ListenActivity extends AppCompatActivity implements View.OnClickLis
     class MusicThread implements Runnable {
         @Override
         public void run() {
-            //判断音乐的状态，在不停止与不暂停的情况下向总线程发出信息
+            //判断音乐的状态，在不停止与不暂停的情况下向主线程发出信息
             while (!isStop && Common.musicList.get(position) != null) {
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-//               进行ui更新
                 handler.sendEmptyMessage(mediaPlayer.getCurrentPosition());
-
             }
         }
     }

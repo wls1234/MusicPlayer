@@ -66,7 +66,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
         });
 
@@ -104,7 +103,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             builder.setNegativeButton("否", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    finish();
                 }
 
             });

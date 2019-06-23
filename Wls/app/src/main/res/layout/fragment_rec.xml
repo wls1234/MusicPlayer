@@ -72,55 +72,110 @@
             </ScrollView>
             </LinearLayout>
         </LinearLayout>
-
     <LinearLayout
+        android:orientation="horizontal"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
-
-        <ImageView
-            android:background="@android:color/darker_gray"
-            android:id="@+id/recmusic3"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
+        <LinearLayout
             android:layout_weight="1"
-            android:src="@mipmap/pop" />
-
-        <TextView
-            android:background="@android:color/darker_gray"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/recmusic3"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                android:src="@mipmap/pop" />
+        </LinearLayout>
+        <LinearLayout
             android:layout_weight="0.5"
             android:layout_width="match_parent"
-            android:text="这里是流行热歌推荐"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_height="match_parent" />
-
+            android:layout_height="wrap_content">
+            <ScrollView
+                android:fillViewport="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/darker_gray"
+                    android:maxLines="11"
+                    android:text="1.千里之外\n2.七里香\n3.告白气球\n4.年年\n5.绿色\n6.紫\n7.without me\n8.salt water room\n9.一步两步\n10.阵雨\n11.小宇宙\n11.beautiful"
+                    android:textColor="@android:color/black"
+                    android:textSize="15dp" />
+            </ScrollView>
+        </LinearLayout>
     </LinearLayout>
 
+    <!--<LinearLayout-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1">-->
+
+        <!--<ImageView-->
+            <!--android:background="@android:color/darker_gray"-->
+            <!--android:id="@+id/recmusic3"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="180dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:src="@mipmap/pop" />-->
+
+        <!--<TextView-->
+            <!--android:background="@android:color/darker_gray"-->
+            <!--android:layout_weight="0.5"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:text="这里是流行热歌推荐"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_height="match_parent" />-->
+
+    <!--</LinearLayout>-->
     <LinearLayout
+        android:orientation="horizontal"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
-
-        <ImageView
-            android:background="@android:color/darker_gray"
-            android:id="@+id/recmusic4"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
+        <LinearLayout
             android:layout_weight="1"
-            android:src="@mipmap/m" />
-
-        <TextView
-            android:background="@android:color/darker_gray"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/recmusic4"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                android:src="@mipmap/m" />
+        </LinearLayout>
+        <LinearLayout
             android:layout_weight="0.5"
             android:layout_width="match_parent"
-            android:text="这里是榜中榜推荐"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_height="match_parent" />
-
+            android:layout_height="wrap_content">
+            <ScrollView
+                android:fillViewport="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/darker_gray"
+                    android:maxLines="11"
+                    android:text="1.千里之外\n2.七里香\n3.告白气球\n4.年年\n5.绿色\n6.紫\n7.without me\n8.salt water room\n9.一步两步\n10.阵雨\n11.小宇宙\n11.beautiful"
+                    android:textColor="@android:color/black"
+                    android:textSize="15dp" />
+            </ScrollView>
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
